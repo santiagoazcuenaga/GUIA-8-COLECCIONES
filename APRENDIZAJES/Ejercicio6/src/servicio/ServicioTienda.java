@@ -25,11 +25,21 @@ public class ServicioTienda {
     
     public Producto newProduct(){
         Producto b2 = new Producto();
+        do{
         System.out.println("Coloque el nombre del producto");
         b2.setName(leer.next());
         System.out.println("Coloque el precio del producto");
         b2.setPrice(leer.nextDouble());
         pr.put(b2.getName(),b2.getPrice());
+            System.out.println("¿Quiere ingresar otro producto?");
+            String resp = leer.next();
+            
+        if(resp.equals("no")){
+            break;
+            
+        }
+        }while(true);
+        
         return b2;
     }
     public void mostrarProducto(){
