@@ -31,13 +31,21 @@ public class ServicioTienda {
         System.out.println("Coloque el precio del producto");
         b2.setPrice(leer.nextDouble());
         pr.put(b2.getName(),b2.getPrice());
-            System.out.println("¿Quiere ingresar otro producto?");
+            System.out.println("¿Quiere ingresar otro producto? Si/No");
             String resp = leer.next();
-            
-        if(resp.equals("no")){
-            break;
-            
-        }
+
+if(resp.equalsIgnoreCase("si")){
+    continue;
+    
+    
+}
+if(resp.equalsIgnoreCase("no")){
+    break;
+}
+if(!resp.equalsIgnoreCase("si") || !resp.equalsIgnoreCase("no")){
+    System.out.println("respuesta invalida vuelva a intentarlo");
+    resp = leer.next();
+}
         }while(true);
         
         return b2;
